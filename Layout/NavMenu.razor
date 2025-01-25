@@ -1,21 +1,21 @@
 ﻿@inject IJSRuntime JS
 <!-- SIDE MENU -->
-<div id="side-menu" class="w-md-auto p-2">
+<div id="side-menu">
     <button id="menu-btn">
         <span class="menu-bar-1"></span>
         <span class="menu-bar-2"></span>
         <span class="menu-bar-3"></span>
     </button>
     <nav id="side-menu-nav">
-        <ul class="navbar-nav flex-grow-1 text-center">
+        <ul>
             <li class="">
-                <a href="#">Hem</a>
+                <NavLink href="/" Match="NavLinkMatch.All">Hem</NavLink>
             </li>
             <li class="">
-                <a href="#">Konvertering</a>
+                <NavLink href="converter">Konvertering</NavLink>
             </li>
             <li class="">
-                <a href="#">JSON</a>
+                <a href="json">JSON</a>
             </li>
         </ul>
     </nav>
