@@ -1,12 +1,12 @@
-﻿@inject IJSRuntime JS
+﻿
 <!-- SIDE MENU -->
 <div id="side-menu">
-    <button id="menu-btn">
+    <button id="menu-btn" @onclick="ToggleMenu" class="@buttonChange">
         <span class="menu-bar-1"></span>
         <span class="menu-bar-2"></span>
         <span class="menu-bar-3"></span>
     </button>
-    <nav id="side-menu-nav">
+    <nav id="side-menu-nav" style="display: @isMenuOpen;">
         <ul>
             <li class="">
                 <NavLink href="/" Match="NavLinkMatch.All">Hem</NavLink>
@@ -22,12 +22,18 @@
 </div>
 
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            // Kör JavaScript-koden när sidan är färdigrenderad
-            await JS.InvokeVoidAsync("initializeMenu");
+    private string isMenuOpen = "none";
+    private string buttonChange => isMenuOpen == "block" ? "active" : "";
+
+    private void ToggleMenu() {
+        if(isMenuOpen == "block") {
+            isMenuOpen = "none";
+        } else {
+            isMenuOpen = "block";
         }
     }
-}
+}    using System.ComponentModel.Design;
+
+#line default
+#line hidden
+#nullable disable
