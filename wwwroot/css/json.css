@@ -1,0 +1,14 @@
+
+.course-table td {
+    padding: 5px;
+}
+
+.course-table a {
+    color: black;
+    border-bottom: 1px dotted #000;
+    text-decoration: none;
+}
+.course-table a:hover {
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
+}

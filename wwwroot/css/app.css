@@ -2,6 +2,7 @@
 @import url(menu.css);
 @import url(header.css);
 @import url(base.css);
+@import url(json.css);
 
 #blazor-error-ui, .loading-progress {
     display: none;

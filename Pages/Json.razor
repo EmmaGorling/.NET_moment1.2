@@ -2,3 +2,59 @@
 @inject HttpClient Http
 
 <h1>JSON</h1>
+
+<p>
+    På denna undersida läses data in i JSON-format och skrivs ut till en tabell.
+    <br>
+    Datan som läses in är de kurser som jag har läst och kommer att läsa under min utbildning till webbutvecklare.
+</p>
+<p>
+    Om du är nyfiken på kursernas innehåll är kurskoden en klickbar länk som leder dig till respektive kursplan.
+</p>
+
+<h2>Utbildningens kurser</h2>
+
+@if(schedule == null) {
+    <p>Laddar kurser...</p>
+} else {
+    <table class="course-table">
+        <thead>
+            <tr>
+                <th>Kurskod</th>
+                <th>Namn</th>
+                <th>Progression</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var course in schedule) {
+                string codeUpper = "";
+                if(course.Code != null) {
+                    codeUpper = course.Code.ToUpper();
+                }
+                <tr>
+                    <td><a href="@course.Syllabus" target="_blank">@codeUpper</a></td>
+                    <td>@course.CourseName</td>
+                    <td>@course.Progression</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    // Array för lagring av kurser
+    private Schedule[]? schedule;
+
+    // Http-anrop
+    protected override async Task OnInitializedAsync() {
+        schedule = await Http.GetFromJsonAsync<Schedule[]>("https://dahlgren.miun.se/ramschema.php");
+    }
+    // Modell för ramschemat
+    public class Schedule {
+        public string? Code { get; set; }
+        public string? CourseName { get; set; }
+        public string? Progression { get; set; }
+        public string? Syllabus { get; set; }
+    }
+}
