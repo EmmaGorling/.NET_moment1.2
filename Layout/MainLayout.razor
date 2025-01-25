@@ -1,16 +1,26 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+<header>
+        <div class="container">
+            <a id="logo-link" href="/"><img id="header-logo" src="./Logga_lila.svg" alt="Logga Emma Görling"></a>
+            <partial name="_Date" />
         </div>
+    </header>
 
-        <article class="content px-4">
-            @Body
-        </article>
+    
+    <main role="main" class="">
+        <div class="container">
+            <!-- SIDE MENU -->
+            <NavMenu />
+            <!-- MAIN CONTENT -->
+            <div id="page-content">
+                @Body
+            </div>
+        </div>
     </main>
-</div>
+    
+
+    <footer class=" footer text-muted mt-auto">
+        <div class="container text-center">
+            <p class="mt-3 mx-auto text-dark">Av Emma Ådahl Görling - Kontakta mig via e-post: <a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="mailto:adahl.gorling@gmail.com">adahl.gorling@@gmail.com</a></p>
+        </div>
+    </footer>

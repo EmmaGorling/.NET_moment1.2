@@ -1,0 +1,33 @@
+@import url(variables.css);
+/* HEADER */
+header {
+    border-bottom: 2px solid var(--primary);
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+/* HEADER LOGO */
+#logo-link {
+    width: 50%;
+    min-width: 100px;
+    max-width: 200px;
+}
+#header-logo {
+    width: 100%;
+}
+/* HEADER DATE */
+#header-date p {
+    padding-top: 1em;
+    padding-right: 0.5em;
+    text-align: end;
+    font-weight: 500;
+}
+
+
+
+@media (min-width: 600px) {
+    #header-date br {
+        display: none;
+    }
+}

@@ -1,0 +1,70 @@
+#side-menu-nav {
+    width:100%;
+    display: none;
+    text-align: center;
+    
+}
+#side-menu-nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+#side-menu-nav li {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
+    margin: 0.5em auto 0;
+    background-color: var(--bg);
+}
+#side-menu-nav a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5em 0 0.5em;
+    display: block;
+    width: 30ch;
+}
+#side-menu-nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* MENU BUTTON */
+#menu-btn {
+    border: none;
+    background-color: rgba(1, 1, 1, 0);
+    margin: 1em;
+}
+#menu-btn span {
+    height: 3px;
+    width: 30px;
+    background-color: var(--primary);
+    display: block;
+    margin: 6px auto;
+    transition: transform 0.2s ease-in-out, opacity 0.1s ease-in-out;
+    transform-origin: center;
+}
+#menu-btn.active .menu-bar-1 {
+    transform: translateY(9px) rotate(45deg);
+}
+#menu-btn.active .menu-bar-2 {
+    opacity: 0; /* Dölj den mellersta linjen */
+}
+#menu-btn.active .menu-bar-3 {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (min-width: 850px) {
+    #side-menu {
+        border-right: 2px solid var(--primary);
+        
+    }
+    #menu-btn {
+        display: none;
+    }
+    #side-menu-nav {
+        width: fit-content;
+        margin-right: 0.5em;
+        display: block;
+    }
+}
