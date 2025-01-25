@@ -1,4 +1,5 @@
-﻿<!-- SIDE MENU -->
+﻿@inject IJSRuntime JS
+<!-- SIDE MENU -->
 <div id="side-menu" class="w-md-auto p-2">
     <button id="menu-btn">
         <span class="menu-bar-1"></span>
@@ -19,3 +20,14 @@
         </ul>
     </nav>
 </div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Kör JavaScript-koden när sidan är färdigrenderad
+            await JS.InvokeVoidAsync("initializeMenu");
+        }
+    }
+}

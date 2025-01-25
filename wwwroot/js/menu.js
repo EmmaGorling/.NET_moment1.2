@@ -1,11 +1,13 @@
 "use strict"
 
+window.initializeMenu = () => {
+    const menuBtn = document.getElementById('menu-btn');
+    menuBtn.addEventListener('click', () => {
+        toggleMenu();
+        menuBtn.classList.toggle('active');
+    });
+};
 
-const menuBtn = document.getElementById('menu-btn');
-menuBtn.addEventListener('click', () => {
-    toggleMenu();
-    menuBtn.classList.toggle('active');
-});
 
 
 function toggleMenu() {
