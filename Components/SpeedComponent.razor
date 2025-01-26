@@ -1,0 +1,41 @@
+
+<div class="component-container">
+    <h2>Konvertering från km/h till miles/h</h2>
+
+    <div class="converter">
+        <label for="kilometers">Km/h</label>
+        <input type="number" min="0" @bind="@Kilometers" @bind:event="oninput" />
+        <span> = </span>
+        <input type="number" min="0" @bind="@Miles" @bind:event="oninput" />
+        <label for="miles">Miles/h</label>
+    </div>
+</div>
+
+
+@code {
+    private double _kilometers;
+    private double _miles;
+
+    public double Kilometers {
+        get => _kilometers;
+        set
+        {
+            if (_kilometers != value)
+            {
+                _kilometers = Math.Round(value, 2);
+                _miles = Math.Round(_kilometers * 0.6221371, 0); 
+            }
+        }
+    }
+    public double Miles {
+        get => _miles;
+        set
+        {
+            if (_miles != value)
+            {
+                _miles = Math.Round(value, 2); 
+                _kilometers = Math.Round(_miles / 1.60934, 0); 
+            }
+        }
+    }
+}  

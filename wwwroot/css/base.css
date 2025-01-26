@@ -44,7 +44,12 @@ p {
     max-width: 70ch;
     line-height: 1.3em;
 }
-
+.paragraph-link {
+    color: black;
+}
+.paragraph-link:hover {
+    color: var(--primary);
+}
 @media (min-width:850px) {
     main .container {
         display: flex;
