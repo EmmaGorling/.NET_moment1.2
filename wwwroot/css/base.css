@@ -54,6 +54,6 @@ p {
         padding: 0 1em;
     }
     main .container {
-        margin-top: 2em;
+        margin: 2em auto 2em;
     }
 }

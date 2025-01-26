@@ -1,0 +1,11 @@
+.converter {
+    display: flex;
+    margin: 1em auto;
+}
+.converter input {
+    width: 10ch;
+    margin-right: 2em;
+}
+.converter p {
+    margin: 0 1em;
+}

@@ -2,4 +2,40 @@
 
 <h2>Konvertering mellan meter och fot</h2>
 
+<div class="converter">
+    <label for="meter">Meter</label>
+    <input type="number" min="0" @bind="@Meter" @bind:event="oninput" />
+    <span> = </span>
+    <input type="number" min="0" @bind="@Feet" @bind:event="oninput" />
+    <label for="feet">Fot</label>
+</div>
 
+
+
+@code {
+    private double _meter;
+    private double _feet;
+
+    public double Meter {
+        get => _meter;
+        set
+        {
+            if (_meter != value)
+            {
+                _meter = Math.Round(value, 2);
+                _feet = Math.Round(_meter * 3.28084, 2); 
+            }
+        }
+    }
+    public double Feet {
+        get => _feet;
+        set
+        {
+            if (_feet != value)
+            {
+                _feet = Math.Round(value, 2); 
+                _meter = Math.Round(_feet / 3.28084, 2); 
+            }
+        }
+    }
+}    
