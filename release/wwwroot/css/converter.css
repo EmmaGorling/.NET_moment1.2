@@ -1,0 +1,17 @@
+.component-container {
+    margin: 2em 0;
+}
+.converter {
+    display: flex;
+    margin: 1em ;
+    max-width: 40ch;
+    justify-content: start;
+}
+.converter input {
+    width: 10ch;
+    margin: auto 1em;
+}
+.converter span {
+    display: inline-block;
+    margin: auto 1em;
+}
